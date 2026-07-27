@@ -552,7 +552,8 @@
   .contact-links {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.5rem;
     flex-wrap: wrap;
   }
 
@@ -561,14 +562,31 @@
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #fff;
+    color: rgba(255,255,255,0.85);
     text-decoration: none;
     border-bottom: 1px solid rgba(255,255,255,0.3);
     padding-bottom: 2px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, color 0.2s;
   }
 
-  .contact-link:hover { border-color: #fff; }
+  .contact-link:hover { border-color: #fff; color: #fff; }
+
+  .contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .contact-cta:hover { border-color: #fff; color: #fff; }
 
   /* ── FOOTER ── */
   footer {
@@ -1129,8 +1147,8 @@
       <h2 class="contact-title">Let's work together.</h2>
       <p class="contact-sub">Open to Senior & Staff content roles in the San Francisco Bay Area and beyond.</p>
       <div class="contact-links">
+      <a href="https://www.linkedin.com/in/aedaniels/" target="_blank" rel="noopener" class="contact-cta">LinkedIn</a>
       <a href="https://drive.google.com/file/d/1eMtLo6mukOqIUz_xpjJMWrGxfCT9Wg3Y/view" target="_blank" rel="noopener" class="contact-link">Portfolio</a>
-      <a href="https://www.linkedin.com/in/aedaniels/" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
     </div>
     </div>
   </div>
