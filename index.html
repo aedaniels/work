@@ -134,7 +134,6 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    margin-top: 2.5rem;
     padding: 0.85rem 2rem;
     background: var(--teal-deep);
     color: #fff;
@@ -147,6 +146,30 @@
   }
 
   .hero-cta:hover { background: var(--teal-mid); }
+
+  .hero-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    background: var(--teal-pale);
+    color: var(--teal-deep);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+
+  .hero-cta-secondary:hover { background: #d3e9e1; }
+
+  .hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+  }
 
   .hero-visual {
     position: relative;
@@ -651,6 +674,12 @@
     margin-top: 2rem;
   }
 
+  .links-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
   .links-group {
     display: flex;
     flex-direction: column;
@@ -714,7 +743,10 @@
         <p class="hero-meta-item">Focus: <span>Monetization · GenAI · Design systems</span></p>
         <p class="hero-meta-item">Location: <span>San Francisco Bay Area</span></p>
       </div>
-      <a href="#work" class="hero-cta">View my work ↓</a>
+      <div class="hero-cta-row">
+        <a href="#work" class="hero-cta">View my work ↓</a>
+        <a href="https://drive.google.com/file/d/1eMtLo6mukOqIUz_xpjJMWrGxfCT9Wg3Y/view" target="_blank" rel="noopener" class="hero-cta-secondary">View my portfolio ↗</a>
+      </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
       <div class="hero-bubble bubble-1"></div>
@@ -725,9 +757,7 @@
       <div class="hero-bubble bubble-6"></div>
       <div class="hero-bubble bubble-7"></div>
       <div class="hero-bubble bubble-8"></div>
-      <div class="hero-principle">
-        <p>Clear, concise, and conversational messages earn users' trust.</p>
-      </div>
+      <div class="hero-principle"></div>
     </div>
   </div>
 </section>
@@ -999,42 +1029,46 @@
 
 <!-- MORE WRITING -->
 <section class="section" id="links" style="padding-top: 0;">
-  <p class="section-label">More writing</p>
-  <h2 class="section-title">Selected links</h2>
+  <p class="section-label">Links</p>
+  <h2 class="section-title">Selected writing</h2>
   <hr class="rule">
   <div class="links-grid">
-    <div class="links-group">
-      <p class="links-group-title">Product & web</p>
-      <a href="https://whatsappbusiness.com/products/business-app-features/" target="_blank" rel="noopener" class="links-item">WhatsApp Business landing page</a>
-      <a href="https://faq.whatsapp.com/1711086883148106/?helpref=faq_content&cms_platform=android" target="_blank" rel="noopener" class="links-item">WhatsApp FAQ</a>
+    <div class="links-col">
+      <div class="links-group">
+        <p class="links-group-title">Product & web</p>
+        <a href="https://whatsappbusiness.com/products/business-app-features/" target="_blank" rel="noopener" class="links-item">WhatsApp Business landing page</a>
+        <a href="https://faq.whatsapp.com/1711086883148106/?helpref=faq_content&cms_platform=android" target="_blank" rel="noopener" class="links-item">WhatsApp FAQ</a>
+      </div>
+      <div class="links-group">
+        <p class="links-group-title">Blogs</p>
+        <a href="https://sourceforge.net/blog/how-to-get-your-project-noticed-on-sourceforge/" target="_blank" rel="noopener" class="links-item">How to get your project noticed on SourceForge</a>
+        <a href="https://sourceforge.net/blog/update-how-to-migrate-from-google-code-to-sourceforge/" target="_blank" rel="noopener" class="links-item">How to migrate from Google Code to SourceForge</a>
+        <a href="https://sourceforge.net/blog/tutorial-how-to-sync-a-github-or-google-code-repo-to-a-sourceforge-project" target="_blank" rel="noopener" class="links-item">How to sync a GitHub or Google Code repo to SourceForge</a>
+        <a href="https://blog.virtahealth.com/protein-on-low-carb-ketogenic-diet" target="_blank" rel="noopener" class="links-item">3 Tips for Protein Consumption on a Low Carb or Ketogenic Diet</a>
+      </div>
     </div>
-    <div class="links-group">
-      <p class="links-group-title">Reflections</p>
-      <a href="https://www.elephantjournal.com/2011/07/nature-the-remedy-for-a-tech-crazed-culture-elizabeth-daniels/" target="_blank" rel="noopener" class="links-item">Nature: The Remedy for a Tech-Crazed Culture</a>
-      <a href="https://www.linkedin.com/pulse/art-giving-gratitude-elizabeth-daniels/" target="_blank" rel="noopener" class="links-item">The Art of Gratitude</a>
-    </div>
-    <div class="links-group">
-      <p class="links-group-title">Blogs</p>
-      <a href="https://sourceforge.net/blog/how-to-get-your-project-noticed-on-sourceforge/" target="_blank" rel="noopener" class="links-item">How to get your project noticed on SourceForge</a>
-      <a href="https://sourceforge.net/blog/update-how-to-migrate-from-google-code-to-sourceforge/" target="_blank" rel="noopener" class="links-item">How to migrate from Google Code to SourceForge</a>
-      <a href="https://sourceforge.net/blog/tutorial-how-to-sync-a-github-or-google-code-repo-to-a-sourceforge-project" target="_blank" rel="noopener" class="links-item">How to sync a GitHub or Google Code repo to SourceForge</a>
-      <a href="https://blog.virtahealth.com/protein-on-low-carb-ketogenic-diet" target="_blank" rel="noopener" class="links-item">3 Tips for Protein Consumption on a Low Carb or Ketogenic Diet</a>
-    </div>
-    <div class="links-group">
-      <p class="links-group-title">Videos</p>
-      <a href="https://www.youtube.com/watch?v=xBR22miqRJs" target="_blank" rel="noopener" class="links-item">How to Use the GitHub & Google Code Importer</a>
-      <a href="https://www.youtube.com/watch?v=Rp8f0cLmMrI" target="_blank" rel="noopener" class="links-item">How to Use a Forked Repo with Merge Requests</a>
+    <div class="links-col">
+      <div class="links-group">
+        <p class="links-group-title">Videos</p>
+        <a href="https://www.youtube.com/watch?v=xBR22miqRJs" target="_blank" rel="noopener" class="links-item">How to Use the GitHub & Google Code Importer</a>
+        <a href="https://www.youtube.com/watch?v=Rp8f0cLmMrI" target="_blank" rel="noopener" class="links-item">How to Use a Forked Repo with Merge Requests</a>
+      </div>
+      <div class="links-group">
+        <p class="links-group-title">Reflections</p>
+        <a href="https://www.elephantjournal.com/2011/07/nature-the-remedy-for-a-tech-crazed-culture-elizabeth-daniels/" target="_blank" rel="noopener" class="links-item">Nature: The Remedy for a Tech-Crazed Culture</a>
+        <a href="https://www.linkedin.com/pulse/art-giving-gratitude-elizabeth-daniels/" target="_blank" rel="noopener" class="links-item">The Art of Gratitude</a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CAREER -->
 <section class="section" id="about">
-  <p class="section-label">Experience</p>
-  <h2 class="section-title">Career</h2>
+  <p class="section-label">About</p>
+  <h2 class="section-title">Experience</h2>
   <div class="career-list">
     <div class="career-item">
-      <div class="career-years">2025 – Present</div>
+      <div class="career-years">2025 – 2026</div>
       <div>
         <p class="career-co">Meta</p>
         <p class="career-role">Senior Content Writer, WhatsApp Business Monetization</p>
