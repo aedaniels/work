@@ -324,6 +324,62 @@
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-top: 1rem;
+    align-items: center;
+  }
+
+  .ai-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0.65rem;
+    border-radius: 2px;
+    background: var(--teal-deep);
+    color: #fff;
+    cursor: help;
+    user-select: none;
+  }
+
+  .ai-badge .ai-popover {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 320px;
+    background: #fff;
+    color: var(--ink-mid);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-transform: none;
+    padding: 1rem 1.1rem;
+    border: 0.5px solid var(--rule);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    border-radius: 4px;
+    z-index: 10;
+  }
+
+  .ai-badge .ai-popover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    border: 6px solid transparent;
+    border-top-color: #fff;
+  }
+
+  .ai-badge:hover .ai-popover,
+  .ai-badge:focus .ai-popover,
+  .ai-badge.ai-open .ai-popover {
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .ai-badge .ai-popover {
+      width: 240px;
+      left: -20px;
+    }
   }
 
   .cs-tag {
@@ -877,6 +933,7 @@
         <span class="cs-tag">Naming systems</span>
         <span class="cs-tag">Information architecture</span>
         <span class="cs-tag">74 countries</span>
+        <span class="ai-badge" tabindex="0">AI assisted<span class="ai-popover">While using Claude to draft naming options for the Dynamic Audiences project, it suggested labels that sounded clean in isolation but didn't hold up against how small business owners actually think about their contact lists. For example, some AI-suggested terms leaned on internal or database logic rather than user mental models, which was the exact jargon problem I was trying to solve. I caught this by mapping the suggestions against the real user journey and flagging where the language still required users to "decode" meaning. I then revised the options myself and validated the final framework with research and real users before finalizing, rather than relying on the AI output as final copy.</span></span>
       </div>
     </div>
     <div class="cs-body">
@@ -935,6 +992,7 @@
         <span class="cs-tag">Content strategy</span>
         <span class="cs-tag">Terminology</span>
         <span class="cs-tag">NUX</span>
+        <span class="ai-badge" tabindex="0">AI assisted<span class="ai-popover">On the GenAI Image Composer project for WhatsApp Business, I used Claude as a springboard to stress-test terminology choices before committing to a direction. I ran the tradeoffs between words like "generate" and "create" through Claude to surface connotations and edge cases I might have missed, which helped me land on "create" as language that set the right user expectations for an iterative AI tool rather than a one-shot generator. I also used Figma's AI features alongside Claude to check that the terminology stayed consistent across every screen, CTA, and confirmation message in the flow. This pattern-recognition pass caught inconsistencies early, before they reached engineering or research review.</span></span>
       </div>
     </div>
     <div class="cs-body">
@@ -1160,5 +1218,22 @@
   <p>Content strategist & copywriter</p>
 </footer>
 
+
+<script>
+document.querySelectorAll('.ai-badge').forEach(function(badge) {
+  badge.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelectorAll('.ai-badge.ai-open').forEach(function(other) {
+      if (other !== badge) other.classList.remove('ai-open');
+    });
+    badge.classList.toggle('ai-open');
+  });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.ai-badge.ai-open').forEach(function(b) {
+    b.classList.remove('ai-open');
+  });
+});
+</script>
 </body>
 </html>
