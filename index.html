@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -792,6 +793,19 @@
   .hero-text { animation: fadeUp 0.8s ease both; }
   .hero-visual { animation: fadeUp 0.8s 0.15s ease both; }
   .cs-body p:not(.cs-body-label) + p { margin-top: 1em; }
+
+  /* Hero bubbles: Guiding Principle graphic (scales for mobile) */
+  .hero-visual.hero-principle-graphic { height: auto; overflow: visible; }
+  .hero-principle-graphic svg { display: block; width: 100%; height: auto; }
+  .hero-principle-graphic .hp-label { font-family: var(--sans); font-size: 24px; font-weight: 400; }
+  .hero-principle-graphic .hp-statement { font-family: var(--sans); font-size: 37px; font-weight: 400; }
+  @media (max-width: 900px) {
+    .hero-visual.hero-principle-graphic { height: auto; max-width: 520px; margin: 0 auto; }
+  }
+  @media (max-width: 600px) {
+    .hero-principle-graphic .hp-label { font-size: 32px; }
+    .hero-principle-graphic .hp-statement { font-size: 42px; }
+  }
 </style>
 </head>
 <body>
@@ -822,16 +836,31 @@
         <a href="#work" class="hero-cta">View my work ↓</a>
       </div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-bubble bubble-1"></div>
-      <div class="hero-bubble bubble-2"></div>
-      <div class="hero-bubble bubble-3"></div>
-      <div class="hero-bubble bubble-4"></div>
-      <div class="hero-bubble bubble-5"></div>
-      <div class="hero-bubble bubble-6"></div>
-      <div class="hero-bubble bubble-7"></div>
-      <div class="hero-bubble bubble-8"></div>
-      <div class="hero-principle"></div>
+    <div class="hero-visual hero-principle-graphic">
+      <svg viewBox="185 85 845 640" role="img" aria-label="Guiding principle: Content that builds trust and loyalty, at scale.">
+        <defs>
+          <filter id="bubble-shadow" x="-20%" y="-20%" width="140%" height="150%">
+            <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#000" flood-opacity="0.35"/>
+          </filter>
+        </defs>
+        <circle cx="391" cy="155" r="24"  fill="#bccdc8"/>
+        <circle cx="240" cy="221" r="38"  fill="#bccdc8"/>
+        <circle cx="315" cy="377" r="55"  fill="#7f9e98"/>
+        <circle cx="406" cy="452" r="105" fill="#bccdc8"/>
+        <circle cx="515" cy="618" r="67"  fill="#bccdc8"/>
+        <circle cx="787" cy="471" r="214" fill="#367e7c" filter="url(#bubble-shadow)"/>
+        <circle cx="710" cy="243" r="147" fill="#bccdc8"/>
+        <circle cx="544" cy="301" r="125" fill="#82a09b" filter="url(#bubble-shadow)"/>
+        <text class="hp-label" x="544" y="301" text-anchor="middle" fill="#fff" aria-hidden="true">
+          <tspan x="544" dy="-0.25em">Guiding</tspan>
+          <tspan x="544" dy="1.2em">Principle</tspan>
+        </text>
+        <text class="hp-statement" x="787" y="485" text-anchor="middle" fill="#fff" aria-hidden="true">
+          <tspan x="787" dy="-0.85em">Content that builds</tspan>
+          <tspan x="787" dy="1.2em">trust and loyalty,</tspan>
+          <tspan x="787" dy="1.2em">at scale.</tspan>
+        </text>
+      </svg>
     </div>
   </div>
 </section>
